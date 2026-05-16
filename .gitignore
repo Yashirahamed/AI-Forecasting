@@ -1,0 +1,14 @@
+node_modules/
+.env
+__pycache__/
+*.pyc
+dist/
+.DS_Store
+serviceAccountKey.json
+ml-service/models/*.h5
+ml-service/models/*.pkl
+frontend/dist
+backend/dist
+.venv
+venv/
+*.log
