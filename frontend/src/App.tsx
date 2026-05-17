@@ -7,6 +7,8 @@ import './i18n'
 
 // ─── Layout ───────────────────────────────────────────────────
 import Navbar from '@/components/layout/Navbar'
+import WeatherTicker from '@/components/layout/WeatherTicker'
+import FloatingChat from '@/components/ai/FloatingChat'
 
 // ─── Lazy Pages ───────────────────────────────────────────────
 const Home        = lazy(() => import('@/pages/Home'))
@@ -70,15 +72,16 @@ const AdminRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 // ─── Public Layout (with Navbar) ──────────────────────────────
 const PublicLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="min-h-screen" style={{ background: '#0a0f1e' }}>
+  <div className="min-h-screen w-full overflow-x-hidden" style={{ background: '#0a0f1e' }}>
     <Navbar />
-    <main>{children}</main>
+    <WeatherTicker />
+    <main className="pt-8">{children}</main>
   </div>
 )
 
 // ─── Auth Layout (no Navbar) ──────────────────────────────────
 const AuthLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="min-h-screen" style={{ background: '#0a0f1e' }}>
+  <div className="min-h-screen w-full overflow-x-hidden" style={{ background: '#0a0f1e' }}>
     {children}
   </div>
 )
@@ -276,7 +279,10 @@ export default function App() {
     <AuthProvider>
       <WeatherProvider>
         <BrowserRouter>
-          <AnimatedRoutes />
+          <div className="min-h-screen w-full overflow-x-hidden" style={{ background: '#0a0f1e' }}>
+            <AnimatedRoutes />
+            <FloatingChat />
+          </div>
         </BrowserRouter>
       </WeatherProvider>
     </AuthProvider>

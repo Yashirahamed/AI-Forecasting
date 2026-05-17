@@ -8,6 +8,7 @@ import { formatTemp } from '@/utils/formatWeather'
 import { scaleIn, fadeUp, staggerContainer, staggerItem } from '@/utils/animations'
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
 import { Link } from 'react-router-dom'
+import MoodRing from '@/components/lifestyle/MoodRing'
 
 export default function Dashboard() {
   const { user, supabaseUser } = useAuth()
@@ -189,38 +190,46 @@ export default function Dashboard() {
         </motion.div>
       </motion.div>
 
-      {/* WEATHER DETAIL CARD */}
-      <motion.div {...fadeUp} className="glass p-5 mb-6">
-        <div className="flex items-center gap-2 mb-4">
-          <span>📍</span>
-          <span className="font-semibold">Chennai, India</span>
-          <span className="text-white/40 text-sm ml-auto">
-            Current Forecast Station
-          </span>
+      {/* Wellness & Details Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="lg:col-span-2">
+          {/* WEATHER DETAIL CARD */}
+          <motion.div {...fadeUp} className="glass p-5 h-full">
+            <div className="flex items-center gap-2 mb-4">
+              <span>📍</span>
+              <span className="font-semibold">Chennai, India</span>
+              <span className="text-white/40 text-sm ml-auto">
+                Current Forecast Station
+              </span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div>
+                <div className="stat-label">FEELS LIKE</div>
+                <div className="text-2xl font-bold text-white mt-1">34°C</div>
+                <div className="text-white/40 text-xs mt-1">Heat index active</div>
+              </div>
+              <div>
+                <div className="stat-label">HUMIDITY</div>
+                <div className="text-2xl font-bold text-sky-400 mt-1">82%</div>
+                <div className="text-white/40 text-xs mt-1">High saturation</div>
+              </div>
+              <div>
+                <div className="stat-label">WIND FLOW</div>
+                <div className="text-2xl font-bold text-white mt-1">4.8 m/s</div>
+                <div className="text-white/40 text-xs mt-1">South-Easterly</div>
+              </div>
+              <div>
+                <div className="stat-label">PRESSURE</div>
+                <div className="text-2xl font-bold text-white mt-1">1008 hPa</div>
+                <div className="text-white/40 text-xs mt-1">Steady barometric</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div>
-            <div className="stat-label">FEELS LIKE</div>
-            <div className="text-2xl font-bold text-white mt-1">34°C</div>
-            <div className="text-white/40 text-xs mt-1">Heat index active</div>
-          </div>
-          <div>
-            <div className="stat-label">HUMIDITY</div>
-            <div className="text-2xl font-bold text-sky-400 mt-1">82%</div>
-            <div className="text-white/40 text-xs mt-1">High saturation</div>
-          </div>
-          <div>
-            <div className="stat-label">WIND FLOW</div>
-            <div className="text-2xl font-bold text-white mt-1">4.8 m/s</div>
-            <div className="text-white/40 text-xs mt-1">South-Easterly</div>
-          </div>
-          <div>
-            <div className="stat-label">PRESSURE</div>
-            <div className="text-2xl font-bold text-white mt-1">1008 hPa</div>
-            <div className="text-white/40 text-xs mt-1">Steady barometric</div>
-          </div>
+        <div className="lg:col-span-1">
+          <MoodRing />
         </div>
-      </motion.div>
+      </div>
 
       {/* FAVOURITE CITIES + 7 DAY CHART side by side */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">

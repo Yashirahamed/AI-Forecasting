@@ -52,22 +52,21 @@ export default function Community() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-10 select-none">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 space-y-10 select-none">
       
-      {/* Hero */}
-      <motion.div {...fadeUp} className="glass p-8 relative overflow-hidden rounded-3xl shadow-xl bg-white/[0.03] border border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple/10 to-transparent pointer-events-none" />
-        <div className="flex items-center gap-4 relative z-10">
-          <div className="w-12 h-12 rounded-2xl bg-purple/10 flex items-center justify-center text-3xl">👥</div>
-          <div>
-            <h1 className="text-3xl font-black text-white tracking-wide">Weather Cast Community</h1>
-            <p className="text-white/50 text-sm font-semibold mt-1">Discuss weather observations, agricultural experiences, and extreme warnings with members globally.</p>
-          </div>
-        </div>
+      {/* Centered Premium Header */}
+      <motion.div {...fadeUp} className="text-center space-y-3 max-w-3xl mx-auto">
+        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-purple/10 text-3xl mb-2">👥</div>
+        <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white leading-tight">
+          WeatherCast <span className="gradient-text font-black">Community Grid</span>
+        </h1>
+        <p className="text-white/50 text-sm sm:text-base font-semibold leading-relaxed">
+          Discuss weather observations, agricultural experiences, and extreme warnings with members globally.
+        </p>
       </motion.div>
 
       {/* Main Grid split */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Forum feed (Span 2) */}
         <div className="lg:col-span-2 space-y-6">
@@ -78,7 +77,7 @@ export default function Community() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-5 py-2 rounded-xl text-xs font-bold transition-all capitalize ${
+                  className={`px-5 py-2 rounded-xl text-xs font-bold transition-all capitalize cursor-pointer ${
                     activeTab === tab ? 'bg-white/10 text-white font-extrabold shadow' : 'text-white/50 hover:text-white'
                   }`}
                 >
@@ -115,7 +114,7 @@ export default function Community() {
                     </div>
                     <button 
                       onClick={() => handleUpvote(p.id)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-all text-xs font-bold rounded-xl border border-white/10"
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-all text-xs font-bold rounded-xl border border-white/10 cursor-pointer"
                     >
                       ▲ <span>{p.upvotes}</span>
                     </button>
@@ -148,7 +147,7 @@ export default function Community() {
                 type="text"
                 value={postTitle}
                 onChange={(e) => setPostTitle(e.target.value)}
-                className="w-full bg-[#0d1526] border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-purple text-xs font-semibold"
+                className="w-full input-glass text-xs font-semibold"
                 placeholder="Brief summary title"
                 required
               />
@@ -160,7 +159,7 @@ export default function Community() {
               <textarea
                 value={postContent}
                 onChange={(e) => setPostContent(e.target.value)}
-                className="w-full h-24 bg-[#0d1526] border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-purple text-xs font-semibold resize-none"
+                className="w-full h-24 input-glass text-xs font-semibold resize-none"
                 placeholder="Elaborate observation details"
                 required
               />
@@ -170,8 +169,7 @@ export default function Community() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full py-3 rounded-xl text-white font-bold text-xs tracking-wider uppercase select-none"
-              style={{ background: 'linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%)' }}
+              className="w-full py-3 btn-primary text-xs font-black tracking-wider uppercase select-none cursor-pointer"
             >
               Broadcast to community
             </motion.button>

@@ -77,4 +77,5 @@ export interface WeatherContextType {
   setUnit: (unit: TemperatureUnit) => void
   refreshWeather: () => void
   convertTemp: (celsius: number) => number
+  tickerWeather?: any[]
 }

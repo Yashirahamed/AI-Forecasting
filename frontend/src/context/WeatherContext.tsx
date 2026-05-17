@@ -32,6 +32,24 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   const [aqi, setAqi] = useState<AQIData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [tickerWeather, setTickerWeather] = useState<any[]>([])
+
+  const fetchTickerWeather = useCallback(async () => {
+    const citiesList = ['Chennai', 'Mumbai', 'Delhi', 'Bangalore', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad', 'Jaipur', 'Kochi']
+    try {
+      const promises = citiesList.map(c => getWeatherDirect(c))
+      const results = await Promise.all(promises)
+      const data = results.map(r => ({
+        city: r.data.name,
+        temp: Math.round(r.data.main.temp),
+        condition: r.data.weather[0].main,
+        emoji: r.data.weather[0].main === 'Rain' ? '🌧️' : r.data.weather[0].main === 'Clouds' ? '☁️' : r.data.weather[0].main === 'Clear' ? '☀️' : '🌤️'
+      }))
+      setTickerWeather(data)
+    } catch (err) {
+      console.error('Failed to fetch ticker weather', err)
+    }
+  }, [])
 
   const convertTemp = useCallback(
     (celsius: number): number =>
@@ -112,6 +130,14 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
     void fetchWeather()
   }, [fetchWeather])
 
+  useEffect(() => {
+    void fetchTickerWeather()
+    const timer = setInterval(() => {
+      void fetchTickerWeather()
+    }, 30 * 60 * 1000)
+    return () => clearInterval(timer)
+  }, [fetchTickerWeather])
+
   const handleSetCity = useCallback((newCity: string) => {
     localStorage.setItem('weathercast-city', newCity)
     setCity(newCity)
@@ -136,6 +162,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
         setUnit: handleSetUnit,
         refreshWeather: fetchWeather,
         convertTemp,
+        tickerWeather,
       }}
     >
       {children}

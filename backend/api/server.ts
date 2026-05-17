@@ -26,6 +26,7 @@ import agricultureHandler from './ai/agriculture'
 import packingHandler from './ai/packing'
 import flightHandler from './ai/flight'
 import eventsHandler from './ai/events'
+import travelHandler from './ai/travel'
 import alertsHandler from './alerts/index'
 import newsHandler from './news/index'
 import profileHandler from './profile/index'
@@ -72,6 +73,7 @@ app.post('/api/ai/agriculture', aiLimiter, agricultureHandler)
 app.post('/api/ai/packing', aiLimiter, packingHandler)
 app.post('/api/ai/flight', aiLimiter, flightHandler)
 app.post('/api/ai/events', aiLimiter, authMiddleware, eventsHandler)
+app.post('/api/ai/travel', aiLimiter, authMiddleware, travelHandler)
 
 // ─── Public Routes ────────────────────────────────────────────
 app.all('/api/alerts', alertsHandler)
