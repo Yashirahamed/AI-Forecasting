@@ -18,15 +18,15 @@
   "crons": [
     {
       "path": "/api/jobs/weatherMonitor",
-      "schedule": "*/30 * * * *"
+      "schedule": "0 0 * * *"
     },
     {
       "path": "/api/jobs/badgeChecker",
-      "schedule": "0 * * * *"
+      "schedule": "0 1 * * *"
     },
     {
       "path": "/api/jobs/newsRefresh",
-      "schedule": "0 */2 * * *"
+      "schedule": "0 2 * * *"
     }
   ]
 }
