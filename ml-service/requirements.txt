@@ -1,8 +1,6 @@
 fastapi==0.115.12
 uvicorn[standard]==0.34.2
-tensorflow>=2.15.0
 scikit-learn>=1.4.0
-pandas>=2.2.0
 numpy>=1.26.0
 httpx>=0.27.0
 python-dotenv>=1.0.0
