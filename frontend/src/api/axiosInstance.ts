@@ -1,13 +1,8 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios'
 import { getIdToken } from '@/firebase/auth'
 
-const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-const defaultBaseURL = isLocal ? '/api' : 'https://weathercast-backend.onrender.com/api'
-
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL && import.meta.env.VITE_API_URL !== '/api'
-    ? import.meta.env.VITE_API_URL
-    : defaultBaseURL,
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
