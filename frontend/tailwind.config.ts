@@ -1,90 +1,81 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        navy: '#0a0f1e',
-        navy2: '#0d1526',
-        navy3: '#111827',
-        glass: 'rgba(255,255,255,0.07)',
-        glow: 'rgba(56,189,248,0.15)',
-        blue: '#38bdf8',
-        purple: '#a78bfa',
-        emerald: '#34d399',
-        amber: '#fbbf24',
-        rose: '#f87171',
+        navy: {
+          DEFAULT: '#0a0f1e',
+          800: '#0d1526',
+          900: '#060810',
+        }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'glass': 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+        sans: ['Inter', 'sans-serif'],
       },
       backdropBlur: {
         xs: '2px',
-        '2xl': '40px',
       },
       animation: {
-        'shimmer': 'shimmer 1.5s infinite',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-        'spin-slow': 'spin-slow 12s linear infinite',
-        'slide-up': 'slide-up 0.5s ease-out',
-        'fade-in': 'fade-in 0.4s ease-out',
+        'float-slow': 'float 10s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'shimmer': 'shimmer 1.5s infinite',
         'meteor': 'meteor 3s linear infinite',
         'twinkle': 'twinkle 3s ease-in-out infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'fade-in': 'fadeIn 0.4s ease-out',
+        'count-up': 'countUp 1s ease-out',
+        'draw': 'draw 1s ease-out forwards',
+        'ticker': 'ticker 30s linear infinite',
       },
       keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+        meteor: {
+          '0%': { transform: 'translateX(0) translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateX(-500px) translateY(500px)', opacity: '0' },
         },
-        'pulse-glow': {
-          '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
-          '50%': { opacity: '0.6', transform: 'scale(1.05)' },
+        twinkle: {
+          '0%, 100%': { opacity: '0.2', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.2)' },
         },
-        'spin-slow': {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
+        slideUp: {
+          '0%': { transform: 'translateY(30px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        'slide-up': {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'fade-in': {
+        fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        meteor: {
-          '0%': { transform: 'translate(300px, -300px) scale(0)', opacity: '0' },
-          '10%': { opacity: '1' },
-          '90%': { opacity: '1' },
-          '100%': { transform: 'translate(-300px, 300px) scale(1)', opacity: '0' },
-        },
-        twinkle: {
-          '0%, 100%': { opacity: '0.2' },
-          '50%': { opacity: '1' },
+        ticker: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        'glow-blue': '0 0 30px rgba(56,189,248,0.2), 0 0 60px rgba(56,189,248,0.1)',
-        'glow-purple': '0 0 30px rgba(167,139,250,0.2), 0 0 60px rgba(167,139,250,0.1)',
+        'glass': '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
+        'glow-blue': '0 0 30px rgba(56,189,248,0.3), 0 0 60px rgba(56,189,248,0.1)',
+        'glow-purple': '0 0 30px rgba(167,139,250,0.3), 0 0 60px rgba(167,139,250,0.1)',
+        'glow-green': '0 0 30px rgba(52,211,153,0.3)',
+        'glow-red': '0 0 30px rgba(248,113,113,0.3)',
+        'card': '0 4px 24px rgba(0,0,0,0.5)',
       },
     },
   },
   plugins: [],
 }
-
-export default config
