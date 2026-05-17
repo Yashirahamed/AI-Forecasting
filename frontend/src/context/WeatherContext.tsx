@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from 'react'
 import { WeatherContextType, WeatherData, ForecastItem, AQIData, TemperatureUnit } from '@/types/weather.types'
-import { getWeatherDirect, getForecastDirect } from '@/api/weatherApi'
+import { getWeatherDirect, getForecastDirect, getCurrentWeather } from '@/api/weatherApi'
 
 const WeatherContext = createContext<WeatherContextType | null>(null)
 
@@ -37,15 +37,26 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   const fetchTickerWeather = useCallback(async () => {
     const citiesList = ['Chennai', 'Mumbai', 'Delhi', 'Bangalore', 'Kolkata', 'Hyderabad', 'Pune', 'Ahmedabad', 'Jaipur', 'Kochi']
     try {
-      const promises = citiesList.map(c => getWeatherDirect(c))
-      const results = await Promise.all(promises)
-      const data = results.map(r => ({
-        city: r.data.name,
-        temp: Math.round(r.data.main.temp),
-        condition: r.data.weather[0].main,
-        emoji: r.data.weather[0].main === 'Rain' ? '🌧️' : r.data.weather[0].main === 'Clouds' ? '☁️' : r.data.weather[0].main === 'Clear' ? '☀️' : '🌤️'
-      }))
-      setTickerWeather(data)
+      const data: any[] = []
+      for (const cityItem of citiesList) {
+        try {
+          const res = await getCurrentWeather(cityItem)
+          const w = res.data?.data
+          if (w && w.main && w.weather?.[0]) {
+            data.push({
+              city: w.name,
+              temp: Math.round(w.main.temp),
+              condition: w.weather[0].main,
+              emoji: w.weather[0].main === 'Rain' ? '🌧️' : w.weather[0].main === 'Clouds' ? '☁️' : w.weather[0].main === 'Clear' ? '☀️' : '🌤️'
+            })
+          }
+        } catch (e) {
+          console.warn(`Failed to fetch weather for ticker city ${cityItem}`, e)
+        }
+      }
+      if (data.length > 0) {
+        setTickerWeather(data)
+      }
     } catch (err) {
       console.error('Failed to fetch ticker weather', err)
     }

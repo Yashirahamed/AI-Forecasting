@@ -35,9 +35,17 @@ import uploadSignHandler from './upload/sign'
 const app = express()
 const PORT = process.env.PORT ?? 3001
 
-// ─── Middleware ───────────────────────────────────────────────
 app.use(cors({
-  origin: ['http://localhost:5173', process.env.VERCEL_URL ?? ''].filter(Boolean),
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true)
+    const isLocal = origin.startsWith('http://localhost')
+    const isVercel = origin.endsWith('.vercel.app') || origin.includes('vercel.app')
+    if (isLocal || isVercel) {
+      callback(null, true)
+    } else {
+      callback(null, false)
+    }
+  },
   credentials: true,
 }))
 app.use(express.json({ limit: '2mb' }))
