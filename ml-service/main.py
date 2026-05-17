@@ -1,3 +1,8 @@
+import os
+import sys
+# Ensure the current directory is in the Python search path for robust imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import forecast, anomaly
