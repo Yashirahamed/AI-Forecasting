@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "backend/api/**/*.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/api/$1" },
+    { "src": "/(.*)", "dest": "/frontend/dist/$1" }
+  ],
+  "crons": [
+    {
+      "path": "/api/jobs/weatherMonitor",
+      "schedule": "*/30 * * * *"
+    },
+    {
+      "path": "/api/jobs/badgeChecker",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/jobs/newsRefresh",
+      "schedule": "0 */2 * * *"
+    }
+  ]
+}

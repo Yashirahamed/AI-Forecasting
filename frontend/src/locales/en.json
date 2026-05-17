@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "forecast": "Forecast",
+    "travel": "Travel",
+    "compare": "Compare Cities",
+    "aqi": "Air Quality",
+    "alerts": "Alerts",
+    "news": "News",
+    "community": "Community",
+    "agriculture": "Agriculture",
+    "events": "Events",
+    "timeMachine": "Time Machine",
+    "flightRisk": "Flight Risk",
+    "profile": "Profile",
+    "badges": "Badges",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register"
+  },
+  "home": {
+    "hero": "AI-Powered Weather Intelligence",
+    "subtitle": "Real-time forecasts, smart travel planning, and AI insights — all in one platform.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "dashboard": {
+    "goodMorning": "Good morning",
+    "goodAfternoon": "Good afternoon",
+    "goodEvening": "Good evening",
+    "todayWeather": "Today's Weather",
+    "airQuality": "Air Quality",
+    "activeAlerts": "Active Alerts",
+    "ecoScore": "Eco Score",
+    "morningBrief": "Your AI Morning Brief",
+    "favouriteCities": "Favourite Cities"
+  },
+  "weather": {
+    "temperature": "Temperature",
+    "feelsLike": "Feels Like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "pressure": "Pressure",
+    "visibility": "Visibility",
+    "uvIndex": "UV Index",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "loading": "Fetching weather data...",
+    "error": "Unable to fetch weather data"
+  },
+  "auth": {
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "name": "Full name",
+    "signIn": "Sign In",
+    "signUp": "Create Account",
+    "signInWithGoogle": "Continue with Google",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "forgotPassword": "Forgot password?"
+  },
+  "alerts": {
+    "storm": "Storm",
+    "heatwave": "Heatwave",
+    "flood": "Flood",
+    "frost": "Frost",
+    "cyclone": "Cyclone",
+    "earthquake": "Earthquake",
+    "severity": {
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High",
+      "CRITICAL": "Critical"
+    }
+  },
+  "common": {
+    "search": "Search cities...",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "share": "Share",
+    "export": "Export PDF",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  }
+}

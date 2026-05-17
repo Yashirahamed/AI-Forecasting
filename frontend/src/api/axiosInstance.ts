@@ -1,33 +1,35 @@
-import axios from 'axios';
-import { auth } from '../firebase/firebaseConfig';
+import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from 'axios'
+import { getIdToken } from '@/firebase/auth'
 
-// Axios instance with base URL and automatic Firebase ID token injection
-const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
-});
+const axiosInstance: AxiosInstance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || '/api',
+  timeout: 30000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
 
-// Interceptor to add the Firebase ID token to the Authorization header
-axiosInstance.interceptors.request.use(async (config) => {
-  const user = auth.currentUser;
-  if (user) {
-    const token = await user.getIdToken();
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-}, (error) => {
-  return Promise.reject(error);
-});
-
-// Interceptor to handle 401 Unauthorized errors (e.g., expired token)
-axiosInstance.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response && error.response.status === 401) {
-      // Redirect to login or handle session expiration
-      window.location.href = '/login';
+// ─── Request Interceptor — Attach Firebase ID Token ───────────
+axiosInstance.interceptors.request.use(
+  async (config: InternalAxiosRequestConfig) => {
+    const token = await getIdToken()
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
     }
-    return Promise.reject(error);
-  }
-);
+    return config
+  },
+  (error: unknown) => Promise.reject(error),
+)
 
-export default axiosInstance;
+// ─── Response Interceptor — Handle 401 Redirects ─────────────
+axiosInstance.interceptors.response.use(
+  (response: AxiosResponse) => response,
+  (error: unknown) => {
+    if (axios.isAxiosError(error) && error.response?.status === 401) {
+      window.location.href = '/login'
+    }
+    return Promise.reject(error)
+  },
+)
+
+export default axiosInstance

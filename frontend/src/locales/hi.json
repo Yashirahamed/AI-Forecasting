@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "forecast": "पूर्वानुमान",
+    "travel": "यात्रा",
+    "compare": "शहरों की तुलना",
+    "aqi": "वायु गुणवत्ता",
+    "alerts": "अलर्ट",
+    "news": "समाचार",
+    "community": "समुदाय",
+    "agriculture": "कृषि",
+    "events": "कार्यक्रम",
+    "timeMachine": "टाइम मशीन",
+    "flightRisk": "उड़ान जोखिम",
+    "profile": "प्रोफ़ाइल",
+    "badges": "बैज",
+    "admin": "व्यवस्थापक",
+    "login": "लॉग इन",
+    "logout": "लॉग आउट",
+    "register": "पंजीकरण"
+  },
+  "home": {
+    "hero": "AI-संचालित मौसम बुद्धिमत्ता",
+    "subtitle": "रीयल-टाइम पूर्वानुमान, स्मार्ट यात्रा योजना, और AI अंतर्दृष्टि — एक ही प्लेटफ़ॉर्म पर।",
+    "getStarted": "शुरू करें",
+    "learnMore": "अधिक जानें"
+  },
+  "dashboard": {
+    "goodMorning": "सुप्रभात",
+    "goodAfternoon": "शुभ दोपहर",
+    "goodEvening": "शुभ संध्या",
+    "todayWeather": "आज का मौसम",
+    "airQuality": "वायु गुणवत्ता",
+    "activeAlerts": "सक्रिय अलर्ट",
+    "ecoScore": "इको स्कोर",
+    "morningBrief": "AI मॉर्निंग ब्रीफ",
+    "favouriteCities": "पसंदीदा शहर"
+  },
+  "weather": {
+    "temperature": "तापमान",
+    "feelsLike": "महसूस होता है",
+    "humidity": "आर्द्रता",
+    "wind": "हवा",
+    "pressure": "दबाव",
+    "visibility": "दृश्यता",
+    "uvIndex": "UV सूचकांक",
+    "sunrise": "सूर्योदय",
+    "sunset": "सूर्यास्त",
+    "loading": "मौसम डेटा प्राप्त हो रहा है...",
+    "error": "मौसम डेटा प्राप्त करने में असमर्थ"
+  },
+  "auth": {
+    "email": "ईमेल पता",
+    "password": "पासवर्ड",
+    "confirmPassword": "पासवर्ड की पुष्टि करें",
+    "name": "पूरा नाम",
+    "signIn": "साइन इन",
+    "signUp": "खाता बनाएं",
+    "signInWithGoogle": "Google के साथ जारी रखें",
+    "noAccount": "खाता नहीं है?",
+    "hasAccount": "पहले से खाता है?",
+    "forgotPassword": "पासवर्ड भूल गए?"
+  },
+  "common": {
+    "search": "शहर खोजें...",
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हुआ",
+    "retry": "पुनः प्रयास करें",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "share": "साझा करें",
+    "export": "PDF निर्यात",
+    "darkMode": "डार्क मोड",
+    "lightMode": "लाइट मोड"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "forecast": "ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ",
+    "travel": "ಪ್ರಯಾಣ",
+    "compare": "ನಗರಗಳನ್ನು ಹೋಲಿಸಿ",
+    "aqi": "ಗಾಳಿ ಗುಣಮಟ್ಟ",
+    "alerts": "ಎಚ್ಚರಿಕೆಗಳು",
+    "news": "ಸುದ್ದಿ",
+    "community": "ಸಮುದಾಯ",
+    "agriculture": "ಕೃಷಿ",
+    "events": "ಕಾರ್ಯಕ್ರಮಗಳು",
+    "timeMachine": "ಟೈಮ್ ಮೆಷಿನ್",
+    "flightRisk": "ವಿಮಾನ ಅಪಾಯ",
+    "profile": "ಪ್ರೊಫೈಲ್",
+    "badges": "ಬ್ಯಾಡ್ಜ್‌ಗಳು",
+    "admin": "ನಿರ್ವಾಹಕ",
+    "login": "ಲಾಗಿನ್",
+    "logout": "ಲಾಗ್ ಔಟ್",
+    "register": "ನೋಂದಣಿ"
+  },
+  "home": {
+    "hero": "AI-ಚಾಲಿತ ಹವಾಮಾನ ಬುದ್ಧಿಮತ್ತೆ",
+    "subtitle": "ರಿಯಲ್-ಟೈಮ್ ಮುನ್ಸೂಚನೆಗಳು, ಸ್ಮಾರ್ಟ್ ಪ್ರಯಾಣ ಯೋಜನೆ, AI ಒಳನೋಟಗಳು — ಒಂದೇ ವೇದಿಕೆಯಲ್ಲಿ.",
+    "getStarted": "ಪ್ರಾರಂಭಿಸಿ",
+    "learnMore": "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ"
+  },
+  "dashboard": {
+    "goodMorning": "ಶುಭೋದಯ",
+    "goodAfternoon": "ಶುಭ ಮಧ್ಯಾಹ್ನ",
+    "goodEvening": "ಶುಭ ಸಂಜೆ",
+    "todayWeather": "ಇಂದಿನ ಹವಾಮಾನ",
+    "airQuality": "ಗಾಳಿ ಗುಣಮಟ್ಟ",
+    "activeAlerts": "ಸಕ್ರಿಯ ಎಚ್ಚರಿಕೆಗಳು",
+    "ecoScore": "ಎಕೋ ಸ್ಕೋರ್",
+    "morningBrief": "AI ಬೆಳಿಗ್ಗೆ ಸಾರಾಂಶ",
+    "favouriteCities": "ನೆಚ್ಚಿನ ನಗರಗಳು"
+  },
+  "weather": {
+    "temperature": "ತಾಪಮಾನ",
+    "feelsLike": "ಅನುಭವಿಸಿದಂತೆ",
+    "humidity": "ತೇವಾಂಶ",
+    "wind": "ಗಾಳಿ",
+    "pressure": "ಒತ್ತಡ",
+    "visibility": "ದೃಶ್ಯಮಾನತೆ",
+    "uvIndex": "UV ಸೂಚ್ಯಂಕ",
+    "sunrise": "ಸೂರ್ಯೋದಯ",
+    "sunset": "ಸೂರ್ಯಾಸ್ತ",
+    "loading": "ಹವಾಮಾನ ಮಾಹಿತಿ ತರಲಾಗುತ್ತಿದೆ...",
+    "error": "ಹವಾಮಾನ ಮಾಹಿತಿ ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ"
+  },
+  "auth": {
+    "email": "ಇಮೇಲ್ ವಿಳಾಸ",
+    "password": "ಪಾಸ್‌ವರ್ಡ್",
+    "confirmPassword": "ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ",
+    "name": "ಪೂರ್ಣ ಹೆಸರು",
+    "signIn": "ಸೈನ್ ಇನ್",
+    "signUp": "ಖಾತೆ ರಚಿಸಿ",
+    "signInWithGoogle": "Google ಜೊತೆ ಮುಂದುವರಿಯಿರಿ",
+    "noAccount": "ಖಾತೆ ಇಲ್ಲವೇ?",
+    "hasAccount": "ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ?",
+    "forgotPassword": "ಪಾಸ್‌ವರ್ಡ್ ಮರೆತಿರಾ?"
+  },
+  "common": {
+    "search": "ನಗರಗಳನ್ನು ಹುಡುಕಿ...",
+    "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "error": "ಏನೋ ತಪ್ಪಾಗಿದೆ",
+    "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "save": "ಉಳಿಸಿ",
+    "cancel": "ರದ್ದುಮಾಡಿ",
+    "delete": "ಅಳಿಸಿ",
+    "edit": "ಸಂಪಾದಿಸಿ",
+    "share": "ಹಂಚಿಕೊಳ್ಳಿ",
+    "export": "PDF ರಫ್ತು",
+    "darkMode": "ಡಾರ್ಕ್ ಮೋಡ್",
+    "lightMode": "ಲೈಟ್ ಮೋಡ್"
+  }
+}
