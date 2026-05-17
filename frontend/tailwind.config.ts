@@ -31,7 +31,7 @@ export default {
         'fade-in': 'fadeIn 0.4s ease-out',
         'count-up': 'countUp 1s ease-out',
         'draw': 'draw 1s ease-out forwards',
-        'ticker': 'ticker 30s linear infinite',
+        'ticker': 'ticker 75s linear infinite',
       },
       keyframes: {
         float: {
@@ -63,8 +63,8 @@ export default {
           '100%': { opacity: '1' },
         },
         ticker: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.33%)' },
         },
       },
       boxShadow: {

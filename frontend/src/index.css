@@ -321,13 +321,4 @@
     0%, 100% { opacity: 0.2; }
     50% { opacity: 1; }
   }
-
-  .animate-ticker {
-    display: inline-block;
-    animation: ticker-scrolling 75s linear infinite;
-  }
-  @keyframes ticker-scrolling {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.33%); }
-  }
 }
