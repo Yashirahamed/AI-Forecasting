@@ -4,34 +4,22 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
-    {
-      "src": "backend/api/server.ts",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "backend/api/jobs/*.ts",
-      "use": "@vercel/node"
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/backend/api/server.ts" },
-    { "src": "/(.*)\\.(js|css|png|jpg|jpeg|gif|svg|ico|json|webp|map)", "dest": "/frontend/$1.$2" },
-    { "src": "/(.*)", "dest": "/frontend/index.html" }
-  ],
-  "crons": [
     {
-      "path": "/api/jobs/weatherMonitor",
-      "schedule": "0 0 * * *"
+      "src": "/api/(.*)",
+      "dest": "/backend/api/$1"
     },
     {
-      "path": "/api/jobs/badgeChecker",
-      "schedule": "0 1 * * *"
+      "handle": "filesystem"
     },
     {
-      "path": "/api/jobs/newsRefresh",
-      "schedule": "0 2 * * *"
+      "src": "/(.*)",
+      "dest": "/frontend/dist/index.html"
     }
   ]
 }
