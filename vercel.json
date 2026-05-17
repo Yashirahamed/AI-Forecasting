@@ -17,7 +17,8 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/api/server.ts" },
-    { "src": "/(.*)", "dest": "/frontend/dist/$1" }
+    { "src": "/(.*)\\.(js|css|png|jpg|jpeg|gif|svg|ico|json|webp|map)", "dest": "/$1.$2" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ],
   "crons": [
     {
