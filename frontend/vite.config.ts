@@ -27,12 +27,24 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          charts: ['recharts'],
-          maps: ['leaflet', 'react-leaflet'],
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
-          firebase: ['firebase/app', 'firebase/auth'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'vendor'
+            }
+            if (id.includes('recharts')) {
+              return 'charts'
+            }
+            if (id.includes('leaflet')) {
+              return 'maps'
+            }
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three'
+            }
+            if (id.includes('firebase')) {
+              return 'firebase'
+            }
+          }
         },
       },
     },
